@@ -1,0 +1,13 @@
+language: r
+cache: packages
+sudo: false
+
+install:
+  - Rscript install-packages.R
+  
+script:
+  - Rscript datascript.R
+
+after_success:
+  - git checkout master
+  - Rscript archive.R
