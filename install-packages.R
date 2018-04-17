@@ -4,4 +4,4 @@ if ("pacman" %in% rownames(installed.packages()) == FALSE) install.packages("pac
 
 # Install analysis packages using pacman
 
-pacman::p_load(stringr)
+pacman::p_load(git2r, semver)
