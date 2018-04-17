@@ -8,11 +8,7 @@ repo <- git2r::repository(".")
 git2r::checkout(repo, branch = "master")
 git2r::remote_add(repo,
                   name = "deploy",
-                  url = paste("https://",
-                              github_token,
-                              "@github.com/weecology/livedat.git",
-                              sep="")
-                  )
+                  url = "https://github.com/weecology/livedat.git")
 cred <- git2r::cred_token("GITHUB_TOKEN")
 
 # Use a special user name so that it is clear which commits are automated
