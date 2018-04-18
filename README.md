@@ -51,8 +51,8 @@ After a few minutes
 4. In the top right corner of the screen click the down arrow next to your email
    address and select "GitHub"
    
-   ![Screenshot of Zenodo main menu](screenshots/zenodo_menu.jpg)
+   ![Screenshot of Zenodo main menu](screenshots/zenodo_menu.png)
    
 5. Find your repository in the list and flip the switch to "On"
 
-   ![Screenshot of Zenodo integration switch](screenshots/toggle_zenodo.jpg)
+   ![Screenshot of Zenodo integration switch](screenshots/toggle_zenodo.png)
