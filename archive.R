@@ -4,17 +4,22 @@
 #' If [major] or [patch] is in the last commit summary increment the matching
 #' version instead.
 
+library(yaml)
+library(git2r)
+library(semver)
+
+config <- yaml::yaml.load_file("config.yml")
+
 repo <- git2r::repository(".")
+repo_url <- paste("https://github.com/", config$repo, ".git", sep = "")
 git2r::checkout(repo, branch = "master")
-git2r::remote_add(repo,
-                  name = "deploy",
-                  url = "https://github.com/weecology/livedat.git")
+git2r::remote_add(repo, name = "deploy", url = repo_url)
 cred <- git2r::cred_token("GITHUB_TOKEN")
 
 # Use a special user name so that it is clear which commits are automated
 git2r::config(repo,
-              user.email = "weecologydeploy@weecology.org",
-              user.name = "Weecology Deploy Bot")
+              user.email = config$deploy_email,
+              user.name = config$deploy_username)
 
 # Check the most recent commit for version instructions 
 last_commit <- git2r::commits(repo)[[1]]
@@ -51,7 +56,8 @@ git2r::push(repo,
             name = "deploy",
             refspec = paste("refs/tags/", new_ver, sep=""),
             credentials = cred)
-httr::POST(url = "https://api.github.com/repos/weecology/livedat/releases",
+api_release_url = paste("https://api.github.com/repos/", config$repo, "/releases", sep = "")
+httr::POST(url = api_release_url,
            httr::content_type_json(),
            httr::add_headers(Authorization = paste("token", github_token)),
            body = paste('{"tag_name":"', new_ver, '"}', sep=''))
