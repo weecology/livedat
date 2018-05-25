@@ -6,8 +6,9 @@ Template and instructions for creating a living data workflow.
 2. [Configure the repository for your project](#configrepo)
 3. [Connect to Zenodo](#connectzendo)
 4. [Connect to Travis](#connecttravis)
-5. [Implement your data cleaning and manipulation steps](#datacleaning)
-6. [Some thoughts on security](#security)
+5. [Give Travis access to update your data on GitHub](#travisaccess)
+6. [Implement your data cleaning and manipulation steps](#datacleaning)
+7. [Some thoughts on security](#security)
 
 This assumes a basic knowledge of git and GitHub.
 
@@ -25,11 +26,13 @@ https://github.com/new/import
 
 ![Screenshot of GitHub import page](screenshots/github_import.png)
 
-After a few minutes 
+5. After the import is finished (typically a few minutes) navigate to your copy
+   of the repository
+6. If you want to work with it locally clone the repository
 
 ## Configure the repository for your project <a name="configrepo"></a>
 
-1. Open the `config.yml` file in the root of the repository
+1. In the root directory of the repository open the `config.yml` file
 2. Change the repo name to that for your project. This should be the GitHub user
    or organization name followed by the repository name. You can get this by
    removing the "https://github.com/" from the url for your repository.
@@ -85,6 +88,67 @@ After a few minutes
    your done.
    
    ![Screenshot of signing back into Travis](screenshots/travis_final_signin.png)
+
+## Give Travis access to update your data on GitHub <a name="travisaccess"></a>
+
+This set of steps creates a "Personal Access Token" that works like a password
+for you GitHub account. Someone with access to this token would be able to use
+it to change most of the core things in your repositories.
+
+1. Select `Settings` from the https://github.com menu
+
+   ![Screenshot of GitHub Settings menu](screenshots/github_menu.png)
+
+2. Select `Developer Settings` from the bottom of the `Personal settings menu on
+   the left of the screen
+
+   ![Screenshot of GitHub Developer Settings menu item](screenshots/github_personal_settings_menu.png)
+
+3. Select `Personal access tokens` from the bottom of the menu on the left of
+   the screen
+
+   ![Screenshot of Personal access tokens menu item](screenshots/github_pat_menu_item.png)
+
+4. Click the `Generate new token` button in the top right of the screen
+
+   ![Screenshot of Generate new token button](screenshots/github_generate_new_token.png)
+
+5. Enter a clear description of the use of this connection in the `Token
+   description` box
+
+   ![Screenshot of token description box](screenshots/github_token_description.png)
+
+6. Click the `repo` scope check box
+
+   ![Screenshot of repo scope check box](screenshots/github_repo_scope_checkbox.png)
+
+7. Click the `Generate token` button at the bottom of the screen
+
+   ![Screenshot of generate token button](screenshots/github_generate_token.png)
+
+8. Click the copy icon to the right of the long string of letters and numbers in
+   the green box
+
+   ![Screenshot of personal access token and copy button](screenshots/github_pat_copy.png)
+
+9. Go to https://travis-ci.com/ and choose your data repository from the `My
+   Repositories` list of the left side of the screen
+
+   ![Screenshot of My Repositories menu on Travis](screenshots/travis_my_repos_menu.png)
+
+10. Click the `More options` menu on the right side of the screen and select
+    `Settings`
+
+   ![Screenshot of More options menu on Travis](screenshots/travis_more_options_menu.png)
+
+11. In the `Environment Variables` section enter `GITHUB_TOKEN` in the `Name`
+    box and paste the token you copied from GitHub into the `Value` box.
+
+   ![Screenshot of Environmental Variables settings on Travis](screenshots/travis_envir_vars.png)
+
+12. Click the `Add` button at the right edge of this section
+
+   ![Screenshot of add button on Travis](screenshots/travis_add_button.png)
 
 ## Implement your data cleaning and manipulation steps <a name="datacleaning"></a>
 
