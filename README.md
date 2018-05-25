@@ -2,16 +2,16 @@
 
 Template and instructions for creating a living data workflow.
 
-1. Clone the repository
-2. Configure the repository for your project
-3. Connect to Zenodo
-4. Connect to Travis
-5. Implement your data cleaning and manipulation steps
-6. Some thoughts on security
+1. [Clone the repository](#copyrep)
+2. [Configure the repository for your project](#configrepo)
+3. [Connect to Zenodo](#connectzendo)
+4. [Connect to Travis](#connecttravis)
+5. [Implement your data cleaning and manipulation steps](#datacleaning)
+6. [Some thoughts on security](#security)
 
 This assumes a basic knowledge of git and GitHub.
 
-## Make a copy of this repository
+## Make a copy of this repository <a name="copyrepo"></a>
 
 You want your own version of this repository to build on. The easiest way to do
 this is to use the GitHub import tool:
@@ -27,7 +27,7 @@ https://github.com/new/import
 
 After a few minutes 
 
-## Configure the repository for your project
+## Configure the repository for your project <a name="configrepo"></a>
 
 1. Open the `config.yml` file in the root of the repository
 2. Change the repo name to that for your project. This should be the GitHub user
@@ -40,7 +40,7 @@ After a few minutes
    name and email that will appear in the commit log.
 4. Commit and push these changes to your GitHub repository.
 
-## Connect to Zenodo
+## Connect to Zenodo <a name="connectzendo"></a>
 
 1. In a browser go to https://zenodo.org/
 2. If you're new to Zenodo
@@ -57,7 +57,7 @@ After a few minutes
 
    ![Screenshot of Zenodo integration switch](screenshots/toggle_zenodo.png)
 
-## Connect to Travis
+## Connect to Travis <a name="connecttravis"></a>
 
 1. Go to https://travis-ci.com/ and click the green button to sign up with GitHub
 
@@ -85,3 +85,9 @@ After a few minutes
    your done.
    
    ![Screenshot of signing back into Travis](screenshots/travis_final_signin.png)
+
+## Implement your data cleaning and manipulation steps <a name="datacleaning"></a>
+
+
+
+## Some thoughts on security <a name="security"></a>
