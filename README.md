@@ -10,7 +10,7 @@ Template and instructions for creating a living data workflow.
 6. [Implement your data cleaning and manipulation steps](#datacleaning)
 7. [Some thoughts on security](#security)
 
-This assumes a basic knowledge of git and GitHub.
+This assumes a basic knowledge of git and GitHub, and an active GitHub account.
 
 ## Make a copy of this repository <a name="copyrepo"></a>
 
@@ -82,10 +82,10 @@ https://github.com/new/import
 5. Approve access to that repository by clicking the green `Approve & Install`
    button
    
-   ![Screenshot of approving repository access](screenshots/travis_activate_approve_repo.png)
+   ![Screenshot of approving repository access](screenshots/travis_approve_repo.png)
 
-6. You will be redirected to Travis. Click the `Sign in with GitHub button and
-   your done.
+6. You will be redirected to Travis. Click the `Sign in with GitHub` button and
+   you're done.
    
    ![Screenshot of signing back into Travis](screenshots/travis_final_signin.png)
 
@@ -99,7 +99,7 @@ it to change most of the core things in your repositories.
 
    ![Screenshot of GitHub Settings menu](screenshots/github_menu.png)
 
-2. Select `Developer Settings` from the bottom of the `Personal settings menu on
+2. Select `Developer Settings` from the bottom of the `Personal settings` menu on
    the left of the screen
 
    ![Screenshot of GitHub Developer Settings menu item](screenshots/github_personal_settings_menu.png)
@@ -113,8 +113,7 @@ it to change most of the core things in your repositories.
 
    ![Screenshot of Generate new token button](screenshots/github_generate_new_token.png)
 
-5. Enter a clear description of the use of this connection in the `Token
-   description` box
+5. Enter a clear description of the use of this connection in the `Token description` box
 
    ![Screenshot of token description box](screenshots/github_token_description.png)
 
@@ -131,8 +130,7 @@ it to change most of the core things in your repositories.
 
    ![Screenshot of personal access token and copy button](screenshots/github_pat_copy.png)
 
-9. Go to https://travis-ci.com/ and choose your data repository from the `My
-   Repositories` list of the left side of the screen
+9. Go to https://travis-ci.com/ and choose your data repository from the `My Repositories` list on the left side of the screen
 
    ![Screenshot of My Repositories menu on Travis](screenshots/travis_my_repos_menu.png)
 
