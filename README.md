@@ -167,3 +167,11 @@ it to change most of the core things in your repositories.
 3. Commit and push these changes to your repository
 
 ## Some thoughts on security <a name="security"></a>
+
+The Personal Access Token from GitHub provides full access to your entire account.
+It is equivalent to having your username and password. Travis and other CI
+companies are very serious about security, but there is always some risk when
+using credentials like this. To mitigate security issues you can set up a
+separate account purely for deploying your data and only give it access to the
+repositories that require it. Then use that accounts Personal Access Token instead
+of the one for you primary account.
