@@ -26,8 +26,6 @@ current_ver <- semver::parse_version(readLines("version.txt"))
 if (grepl("Merge pull request", last_commit['summary'])){
     last_commit <- git2r::commits(repo)[[2]]
 }
-print(current_ver)
-print(last_commit)
 
 if (grepl("\\[no version bump\\]", last_commit['summary'])) {
   new_ver <- current_ver
@@ -38,7 +36,6 @@ if (grepl("\\[no version bump\\]", last_commit['summary'])) {
 } else {
   new_ver <- semver::increment_version(current_ver, "minor", 1L)
 }
-print(new_ver)
 
 writeLines(as.character(new_ver), "version.txt")
 
